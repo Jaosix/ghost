@@ -1,0 +1,32 @@
+/* Session management styles */
+.session-container {
+    background: #1a1a1a;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.session-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+#newSessionBtn {
+    background: #2c5282;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+
+#newSessionBtn:hover {
+    background: #2b6cb0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .session-controls {
+        flex-direction: column;
+    }
+}

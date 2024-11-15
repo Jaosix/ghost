@@ -1,0 +1,132 @@
+/* Ghost section layout */
+.ghost-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: start;
+}
+
+/* Ghost list styles */
+.ghost-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+}
+
+.ghost-list li {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    opacity: 0.5;  /* Default state - ruled out */
+    position: relative;
+    font-size: 1em;
+}
+
+/* Possible ghost styling */
+.ghost-list li.possible {
+    opacity: 1;
+    background: #2d3748;
+    border-color: #4299e1;
+    box-shadow: 0 2px 10px rgba(66, 153, 225, 0.2);
+    font-weight: bold;
+}
+
+.ghost-list li.possible:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+    background: #2c5282;
+}
+
+/* Ruled out ghost styling */
+.ghost-list li:not(.possible) {
+    color: #666;
+    background: #161616;
+}
+
+.ghost-list li:not(.possible):hover {
+    background: #1f1f1f;
+    opacity: 0.7;
+}
+
+/* Ghost info styles */
+.ghost-info {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 5px;
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+}
+
+.ghost-info h2 {
+    color: #4299e1;
+    font-size: 1.3em;
+    margin: 0 0 8px 0;
+}
+
+.ghost-info h3 {
+    color: #63b3ed;
+    margin: 12px 0 4px;
+    font-size: 1.1em;
+}
+
+.evidence-list {
+    margin: 8px 0;
+}
+
+.behavior-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+.behavior-list li {
+    margin: 3px 0;
+    font-size: 0.95em;
+}
+
+/* Ghost count indicator */
+.results-container h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.ghost-count {
+    background: #2c5282;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+/* Scrollbar styling */
+.ghost-list::-webkit-scrollbar,
+.ghost-info::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ghost-list::-webkit-scrollbar-track,
+.ghost-info::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.ghost-list::-webkit-scrollbar-thumb,
+.ghost-info::-webkit-scrollbar-thumb {
+    background: #2c5282;
+    border-radius: 4px;
+}
+
+.ghost-list::-webkit-scrollbar-thumb:hover,
+.ghost-info::-webkit-scrollbar-thumb:hover {
+    background: #4299e1;
+}

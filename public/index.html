@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phasmophobia Evidence Journal</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/session.css">
+    <link rel="stylesheet" href="styles/session-list.css">
+    <link rel="stylesheet" href="styles/evidence.css">
+    <link rel="stylesheet" href="styles/ghost.css">
+    <link rel="stylesheet" href="styles/notifications.css">
+    <link rel="stylesheet" href="styles/modal.css">
+</head>
+<body>
+    <div class="volume-control">
+        <label for="volumeSlider">🔊</label>
+        <input type="range" id="volumeSlider" min="0" max="100" value="50">
+    </div>
+    
+    <audio id="evidenceSound" src="waterdrop.mp3" preload="auto"></audio>
+    <audio id="huntAlarm" src="alarm.mp3" preload="auto"></audio>
+    
+    <div class="session-container">
+        <div class="session-controls">
+            <button id="newSessionBtn">New Session</button>
+        </div>
+        <div class="session-list-container">
+            <div class="session-list-header">
+                <h3>Active Sessions</h3>
+                <button class="refresh-sessions" id="refreshSessionsBtn">
+                    <svg viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 3a5 5 0 0 0-5 5H1l3.5 3.5L8 8H6a2 2 0 1 1 2 2v2a4 4 0 1 0-4-4H2a6 6 0 1 1 6 6v-2a4 4 0 0 0 0-8z"/>
+                    </svg>
+                    Refresh
+                </button>
+            </div>
+            <ul id="sessionList" class="session-list">
+                <!-- Sessions will be populated here -->
+                <li class="session-list-loading">Loading sessions...</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="evidence-container">
+        <div class="hunt-button-container">
+            <button id="huntButton" class="hunt-button">HUNT</button>
+        </div>
+        <div class="evidence-item">
+            <input type="checkbox" class="evidence-checkbox" id="emf">
+            <label for="emf">EMF Level 5</label>
+            <button class="rule-out-btn">✕</button>
+        </div>
+        <div class="evidence-item">
+            <input type="checkbox" class="evidence-checkbox" id="dots">
+            <label for="dots">D.O.T.S Projector</label>
+            <button class="rule-out-btn">✕</button>
+        </div>
+        <div class="evidence-item">
+            <input type="checkbox" class="evidence-checkbox" id="fingerprints">
+            <label for="fingerprints">Fingerprints</label>
+            <button class="rule-out-btn">✕</button>
+        </div>
+        <div class="evidence-item">
+            <input type="checkbox" class="evidence-checkbox" id="freezing">
+            <label for="freezing">Freezing Temperatures</label>
+            <button class="rule-out-btn">✕</button>
+        </div>
+        <div class="evidence-item">
+            <input type="checkbox" class="evidence-checkbox" id="orb">
+            <label for="orb">Ghost Orb</label>
+            <button class="rule-out-btn">✕</button>
+        </div>
+        <div class="evidence-item">
+            <input type="checkbox" class="evidence-checkbox" id="writing">
+            <label for="writing">Ghost Writing</label>
+            <button class="rule-out-btn">✕</button>
+        </div>
+        <div class="evidence-item">
+            <input type="checkbox" class="evidence-checkbox" id="spirit-box">
+            <label for="spirit-box">Spirit Box</label>
+            <button class="rule-out-btn">✕</button>
+        </div>
+    </div>
+
+    <div class="ghost-section">
+        <div class="results-container">
+            <h2>Possible Ghosts</h2>
+            <ul id="ghost-list" class="ghost-list">
+                <!-- Possible ghosts will be populated here -->
+            </ul>
+        </div>
+
+        <div id="ghost-info" class="ghost-info">
+            <!-- Selected ghost information will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Modal Template -->
+    <div id="sessionModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Create New Session</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="sessionNameInput" class="modal-input" 
+                       placeholder="Enter session name (optional)" 
+                       maxlength="30">
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-cancel" id="modalCancelBtn">Cancel</button>
+                <button class="modal-btn modal-btn-confirm" id="modalConfirmBtn">Create Session</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

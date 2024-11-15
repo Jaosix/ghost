@@ -1,0 +1,109 @@
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+}
+
+.modal {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    transform: translateY(-20px);
+    transition: transform 0.2s ease;
+    box-sizing: border-box;  /* Add this to include padding in width calculation */
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0);
+}
+
+.modal-header {
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 8px 12px;
+    background: #2a2a2a;
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1em;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;  /* Add this to include padding in width calculation */
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: #4299e1;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    white-space: nowrap;  /* Prevent button text from wrapping */
+}
+
+.modal-btn-cancel {
+    background: #333;
+    color: #fff;
+}
+
+.modal-btn-cancel:hover {
+    background: #444;
+}
+
+.modal-btn-confirm {
+    background: #2c5282;
+    color: #fff;
+    font-weight: bold;
+}
+
+.modal-btn-confirm:hover {
+    background: #2b6cb0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .modal {
+        width: 95%;
+        margin: 0 10px;
+    }
+}
