@@ -72,10 +72,6 @@ It is installed on the local network and uses Cloudflare as the reverse proxy.
 - CORS configuration
 - Proxy trust for Cloudflare
 
-## License
-
-MIT License
-
 ## Note
 
 This is a personal project. You're welcome to clone and use it for your own purposes.
