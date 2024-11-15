@@ -41,7 +41,7 @@ npm start
 
 The application will be running on port 4224.
 
-## Cloudflare Tunnel Setup
+## Cloudflare
 
 This application is designed to work with Cloudflare Tunnels for secure, public access. 
 It is installed on the local network and uses Cloudflare as the reverse proxy.
