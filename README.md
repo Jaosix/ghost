@@ -15,7 +15,7 @@ A collaborative web application for Phasmophobia players to track evidence and s
 
 - Node.js (v14 or higher)
 - npm
-- Cloudflare account (for tunneling)
+- Cloudflare account (for tunneling) or your own server IP/routing, whatever your situation. 
 
 ## Installation
 
